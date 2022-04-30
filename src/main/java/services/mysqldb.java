@@ -1,5 +1,6 @@
 package services;
 
+import models.RegistrationModel;
 import models.UserModel;
 
 import java.sql.*;
@@ -29,16 +30,8 @@ public class mysqldb {
     }
 
     public UserModel doLogin(String email, String password) throws SQLException {
+
         UserModel userModel = null;
-
-        // PreparedStatement
-
-//        String qLogin = "SELECT name FROM users WHERE email = ? AND password = ?";
-//        PreparedStatement preparedStatement = connection.prepareStatement(qLogin);
-//        preparedStatement.setString(1, email);
-//        preparedStatement.setString(2, password);
-//        ResultSet resultSet = preparedStatement.executeQuery();
-
 
         // Statement
         String qLogin = "SELECT Name FROM users WHERE Email = '"+ email +"' AND password = '"+ password +"'";
@@ -57,6 +50,28 @@ public class mysqldb {
 
     }
 
+    public RegistrationModel doregister(String firstname, String lastname, String email, String password, String address1, String address2) throws SQLException {
+        boolean result = false;
+        String Name = firstname + " " + lastname;
+        RegistrationModel registrationModel = null;
+        String doregister = "INSERT INTO users VALUES(?, ?, ?, ?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(doregister);
+        preparedStatement.setString(1, Name);
+        preparedStatement.setString(2, password);
+        preparedStatement.setString(3, email);
+        preparedStatement.setString(4, address1);
+        preparedStatement.setString(5, address2);
+        int rows_update = preparedStatement.executeUpdate();
+        if(rows_update > 0) {
+            result = true;
+            registrationModel = new RegistrationModel(firstname, lastname, email, password, address1, address2);
+        }
+        preparedStatement.close();
+        return registrationModel;
+    }
+
 }
+
+
 
 
