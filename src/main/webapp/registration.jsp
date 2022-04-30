@@ -24,10 +24,12 @@
             } else if(password !== comfirpassword){
                 document.getElementById("error_msg").innerHTML = "Please match the password."
                 result = false
-            }
-            else if(re_email.test(email) == false){
+            } else if (re_email.test(email) == false)
+            {
                 document.getElementById("error_msg").innerHTML = "Email is not valid."
                 result = false
+            } else {
+                result = true
             }
             return result
         }
@@ -43,7 +45,7 @@
     Password: <input id="password" name="password" type="password" required /> <br/>
     Confirm Password:<input id="confirmpassword" name="confirmpassword" type="password" required /> <br/>
     <span id="error_msg"></span> <br/>
-    <input type="submit" name="Login" />
+    <input type="submit" name="registration" />
 </form>
 
 <p>${error}</p>
