@@ -3,14 +3,19 @@
 <html>
 <head>
     <title>Test for log in page</title>
+    <script type = "text/javascript">
+        function Redirect() {
+            window.location = "registration.jsp";
+        }
+    </script>
 </head>
 
 <body>
 <form action="LoginServlet" method="post">
     Email: <input name="email" type="email" required /> <br/>
     Password: <input name="password" type="password" required /> <br/>
-    <p> <a href="LoginServlet">Login</a> </p>
-    <p> <a href="RegisterServlet">Register</a> </p>
+    <input type="submit" name="Login" value="Login" /> <br/> </br>
+    <button type="button" onclick="Redirect()">register</button>
 </form>
 
 <p>${error}</p>
