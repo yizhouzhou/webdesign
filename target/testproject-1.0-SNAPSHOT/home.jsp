@@ -73,6 +73,11 @@
         </c:forEach>
     </table>
 </form>
+<form  action="LogoutServlet">
+    <input type="submit" value="logout" />
+
+</form >
+
 
         <%
         } else {
