@@ -1,7 +1,7 @@
 package services;
 
+import models.ApartmentModels;
 import models.Fatchinfor;
-import models.RegistrationModel;
 import models.UserModel;
 
 import java.sql.*;
@@ -75,12 +75,12 @@ public class mysqldb {
 
         List<Fatchinfor> list = new ArrayList<>();
         // Statement
-        String qfatch = "SELECT a.AprtmentUnitInformation, a.ApartnumberTotalbedrooms, a.Apartmentrentprice, s.ApartNumberBedrooms FROM users as u, aprtmentinformation as a, status as s WHERE a.idAprtmentInformation = s.idAprtmentInformation AND u.Name = '"+name+"'";
+        String qfatch = "SELECT a.AprtmentUnitInformation, a.ApartnumberTotalbedrooms, a.Apartmentrentprice, s.ApartNumberBedrooms FROM users as u, aprtmentinformation as a, status as s WHERE a.idAprtmentInformation = s.idAprtmentInformation AND u.Name = s.Name AND u.Name = '"+name+"'";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(qfatch);
 
 
-        if(resultSet.next()) {
+        while(resultSet.next()) {
             String apartmentinfo = resultSet.getString("AprtmentUnitInformation");
             String aparttotalbedroom = resultSet.getString("ApartnumberTotalbedrooms");
             String apartprice = resultSet.getString("Apartmentrentprice");
@@ -93,9 +93,29 @@ public class mysqldb {
         statement.close();
         return list;
 //        preparedStatement.close();
+    }
 
+    public List<ApartmentModels> Allaprtment() throws SQLException{
+        List<ApartmentModels> alllist = new ArrayList<>();
+        String qselect = "SELECT * FROM aprtmentinformation;";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(qselect);
+
+        while(resultSet.next()) {
+            String apartmentinfo = resultSet.getString("AprtmentUnitInformation");
+            String aparttotalbedroom = resultSet.getString("ApartnumberTotalbedrooms");
+            String apartprice = resultSet.getString("Apartmentrentprice");
+
+            ApartmentModels apartmentmodels = new ApartmentModels(apartmentinfo, aparttotalbedroom, apartprice);
+            alllist.add(apartmentmodels);
+        }
+        System.out.print(alllist);
+        resultSet.close();
+        statement.close();
+        return alllist;
 
     }
+
 
 }
 
