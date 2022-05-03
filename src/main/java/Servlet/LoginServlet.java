@@ -22,9 +22,6 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        System.out.println(email);
-        System.out.println(password);
-
         mysqldb db = mysqldb.getInstance();
         UserModel userModel = null;
         try {

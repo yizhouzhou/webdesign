@@ -1,7 +1,5 @@
 package Servlet;
 
-import models.UserModel;
-import models.RegistrationModel;
 import services.mysqldb;
 
 import javax.servlet.*;
@@ -25,25 +23,22 @@ public class registrationServlet extends HttpServlet {
         String password = request.getParameter("password");
         String address1 = request.getParameter("address1");
         String address2 = request.getParameter("address2");
+        boolean result = false;
 
         mysqldb db = mysqldb.getInstance();
-        RegistrationModel registrationModel = null;
 
         try {
-            registrationModel = db.doregister(firstname, lastname, email, password, address1, address2);
+            result = db.doregister(firstname, lastname, email, password, address1, address2);
         } catch(SQLException e) {
             e.printStackTrace();
         }
 
-        if (registrationModel != null) {
-
-            HttpSession session = request.getSession();
-            session.setAttribute("user", registrationModel);
+        if (result) {
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("successful.jsp");
             requestDispatcher.forward(request, response);
         } else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("registration.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
             request.setAttribute("error", "registration failed!!!");
             requestDispatcher.forward(request, response);
         }
