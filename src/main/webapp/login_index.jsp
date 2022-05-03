@@ -87,6 +87,7 @@
                 <h4 class="w3l-login"><input type="submit" name="Login" value="Login"/> <button type="button" onclick="Redirect()">Register</button></h4>
                 <p class="quia">Please enter your Email and Password to login</p>
             </form>
+            <p>${error}</p>
         </div>
     </div>
 </section>
