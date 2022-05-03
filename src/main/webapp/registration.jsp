@@ -113,6 +113,7 @@
                 <h4><input type="submit" name="registration" value="Register"/></h4>
                 <p class="quia">Please enter your info to register</p>
             </form>
+            <p>${error}</p>
         </div>
     </div>
 </section>
