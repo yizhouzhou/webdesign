@@ -2502,3 +2502,25 @@ h2.typoh2{
         top: 25px;
     }
 }
+
+#panels {
+    font-family: 'Roboto Condensed', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#panels td, #panels th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#panels tr:nth-child(odd){background-color: #F0d4a3;}
+#panels tr:nth-child(even){background-color: #F2F2F2;}
+
+
+#panels th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    background-color: #b06010;
+    color: white;
+}
