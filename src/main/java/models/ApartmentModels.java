@@ -2,9 +2,9 @@ package models;
 
 public class ApartmentModels {
 
-    String apartmentinfo ;
-    String aparttotalbedroom ;
-    String apartprice ;
+    String apartmentinfo;
+    String aparttotalbedroom;
+    String apartprice;
 
     public ApartmentModels(String apartmentinfo, String aparttotalbedroom, String apartprice) {
         this.apartmentinfo = apartmentinfo;
@@ -36,7 +36,6 @@ public class ApartmentModels {
     public void setApartprice(String apartprice) {
         this.apartprice = apartprice;
     }
-
 
 
 }
