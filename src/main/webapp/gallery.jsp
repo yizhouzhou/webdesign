@@ -1,7 +1,7 @@
 <%--
   Gallery Page of our Project website
   Version: # 003
-  Author: Yifan of YYZ (yifan yizhou ziwen)
+  Author: Yifan from YYZ (yifan yizhou ziwen)
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h3><a class="navbar-brand" href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i> EastandWrightApartment </a></h3>
+                <h3><a class="navbar-brand" href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i> YiFanZhou Student Apartment </a></h3>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
