@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Contact Us | | YiFanZhou Apartment Demo | by Team YYZ</title>
+    <title>Contact Us | YiFanZhou Apartment Demo | by Team YYZ</title>
     <!-- custom-theme -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,7 +21,8 @@
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"></head>
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
 <body>
 <!-- banner -->
 <div class="header">
@@ -89,7 +90,7 @@
 </section>
 <!-- map -->
 <div class="w3l-map">
-    <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.481199827702!2d-85.49735498482262!3d32.593357381027786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888cf30b116620af%3A0xec90525c51d712f7!2z5aWl5pys5aSn5a2m!5e0!3m2!1szh-CN!2sus!4v1588133257226!5m2!1szh-CN!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" allowfullscreen></iframe>
+    <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.481199827702!2d-85.49735498482262!3d32.593357381027786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888cf30b116620af%3A0xec90525c51d712f7!2z5aWl5pys5aSn5a2m!5e0!3m2!1sen-US!2sus!4v1588133257226!5m2!1sen-US!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" allowfullscreen></iframe>
 </div>
 <!-- //map -->
 <!-- myModal -->
