@@ -11,7 +11,7 @@ import java.util.List;
 public class mysqldb {
     String url = "jdbc:mysql://localhost:3306/project_test";
     String username = "root";
-    String password = "235689@Xzyz";
+    String password = "password";
     Connection connection = null;
     static mysqldb instance = null;
 
