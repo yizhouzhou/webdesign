@@ -2,9 +2,12 @@ package Servlet;
 
 import services.mysqldb;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -29,7 +32,7 @@ public class registrationServlet extends HttpServlet {
 
         try {
             result = db.doregister(firstname, lastname, email, password, address1, address2);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -38,7 +41,7 @@ public class registrationServlet extends HttpServlet {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("successful.jsp");
             requestDispatcher.forward(request, response);
         } else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("login_index.jsp");
             request.setAttribute("error", "registration failed!!!");
             requestDispatcher.forward(request, response);
         }
